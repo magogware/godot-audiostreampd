@@ -1,0 +1,63 @@
+[gd_scene load_steps=5 format=2]
+
+[ext_resource path="res://addons/audiostreampd/AudioStreamPd.gd" type="Script" id=1]
+[ext_resource path="res://addons/audiostreampd/PdStreamHelper.gd" type="Script" id=2]
+[ext_resource path="res://addons/audiostreampd/example/GUI.gd" type="Script" id=3]
+
+[sub_resource type="AudioStreamGenerator" id=1]
+script = ExtResource( 1 )
+patch = "res://addons/audiostreampd/example/sawtooth.pd"
+interval = 0.1
+
+[node name="GUI" type="Control"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+script = ExtResource( 3 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
+stream = SubResource( 1 )
+
+[node name="PdStreamHelper" type="Node" parent="AudioStreamPlayer"]
+script = ExtResource( 2 )
+
+[node name="Play" type="Button" parent="."]
+margin_left = 25.0
+margin_top = 23.0
+margin_right = 194.0
+margin_bottom = 74.0
+text = "Play"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Stop" type="Button" parent="."]
+margin_left = 217.0
+margin_top = 20.0
+margin_right = 379.0
+margin_bottom = 77.0
+text = "Stop"
+
+[node name="Up" type="Button" parent="."]
+margin_left = 219.0
+margin_top = 94.0
+margin_right = 381.0
+margin_bottom = 151.0
+text = "Freq up"
+
+[node name="Down" type="Button" parent="."]
+margin_left = 28.0
+margin_top = 93.0
+margin_right = 190.0
+margin_bottom = 150.0
+text = "Freq down"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[connection signal="pressed" from="Play" to="." method="_on_Play_pressed"]
+[connection signal="pressed" from="Stop" to="." method="_on_Stop_pressed"]
+[connection signal="pressed" from="Up" to="." method="_on_Up_pressed"]
+[connection signal="pressed" from="Down" to="." method="_on_Down_pressed"]

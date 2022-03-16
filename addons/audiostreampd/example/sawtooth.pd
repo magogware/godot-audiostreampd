@@ -1,0 +1,7 @@
+#N canvas 525 359 450 300 12;
+#X obj 169 131 dac~;
+#X obj 175 82 phasor~ 440;
+#X obj 175 42 receive freq;
+#X connect 1 0 0 0;
+#X connect 1 0 0 1;
+#X connect 2 0 1 0;

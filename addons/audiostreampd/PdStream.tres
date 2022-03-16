@@ -1,0 +1,7 @@
+[gd_resource type="GDNativeLibrary" format=2]
+
+[resource]
+entry/OSX.64 = "res://addons/audiostreampd/lib/mac/libpdstream.dylib"
+entry/Windows.64 = "res://addons/audiostreampd/lib/windows/pdstream.dll"
+dependency/OSX.64 = [ "res://addons/audiostreampd/lib/mac/libpd.dylib" ]
+dependency/Windows.64 = [ "res://addons/audiostreampd/lib/windows/pd.dll" ]
