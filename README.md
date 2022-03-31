@@ -30,4 +30,4 @@ for the plugin, and for a good introduction to Pd, check out [this series](https
 
 ## Anything else?
 There's a backend to this plugin called `godot-pdstream` that contains the GDNative code that actually integrates Pd (or, rather, libpd)
-with the engine. You can check that out (here)[https://github.com/magogware/godot-pdstream].
+with the engine. You can check that out [here](https://github.com/magogware/godot-pdstream).
